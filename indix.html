@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Calculator</title>
 </head>
 <body>
@@ -11,21 +13,23 @@
         <div class="inpout">
             <input type="text" id="number"/>
         </div>
-        <div class="buttons">
-            <div class="status">
-                <div id="sat first">
-                    <button id="clear">CE</button>
-                    <button id="delete">Del</button>
-                    <button id="mult">*</button>
-                    <button id="sub">-</button>
+        <div class="buttons ">
+            <div class="status container">
+                <div id="first " class="row sat m-auto">
+                    <button id="clear"  class="col-md-2 mx-3">CE</button>
+                    <button id="delete"  class="col-md-2 mx-3">Del</button>
+                    <button id="mult"  class="col-md-2 mx-3">*</button>
+                    <button id="sub"  class="col-md-2 mx-3">-</button>
                 </div>
-               <div id="sat seco">
-                    <button id="sum">+</button>
-                    <button id="deva">/</button>
-                    <button id="dese">%</button>
-                    <button id="power">^</button>
+               <div id="seco" class="row m-auto sat">
+                    <button id="sum" class="col-md-2 mx-3">+</button>
+                    <button id="deva" class="col-md-2 mx-3">/</button>
+                    <button id="dese" class="col-md-2 mx-3">%</button>
+                    <button id="power" class="col-md-2 mx-3">^</button>
                </div>
                <div id="num">
+                <button id="dot">.</button>
+                <button id="zero">0</button>
                 <button id="eqal">=</button>
                </div>
                
@@ -33,6 +37,7 @@
            
         </div>
     </div>
-    <script src="./scribt.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/scribt.js"></script>
 </body>
 </html>
