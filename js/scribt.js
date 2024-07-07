@@ -8,25 +8,21 @@ const inputNum=document.getElementById('number');
 const del=document.getElementById('delete');
 const dot=document.getElementById('dot');
 const eqal=document.getElementById('eqal');
+const equalResult=document.getElementById('result')
 
 let inputValue='';
-
+let inputResult='';
 // this method when i use document.activeElement
 // buttons.addEventListener("click",(e)=>{
 //         addInput(e.target.textContent)
 //     });
-buttons.forEach(button =>{
-    button.addEventListener("click", (e) => {
-        addInput(e.target.textContent)
-      });
-})
 
 for(let i=1;i<=9;i++){
     let btn=document.createElement('button');
     num.appendChild(btn);
     num.insertBefore(btn,dot);
     btn.textContent=i;
-
+    btn.style.fontSize='20px';
     // the next code i replacd it by using activeElement in buttons atribute
     btn.addEventListener('click',()=>{
         addInput(btn.textContent)
@@ -39,7 +35,9 @@ for(let i=1;i<=9;i++){
 }
 clear.addEventListener('click',()=>{
     inputValue = '';
+    inputResult = '';
   inputNum.value = inputValue;
+  equalResult.textContent=inputResult;
 })
 
 del.addEventListener('click',()=>{
@@ -62,6 +60,12 @@ function addInput(input) {
   }
   inputNum.value = inputValue;
 }
+
+buttons.forEach(button =>{
+  button.addEventListener("click", (e) => {
+      addInput(e.target.textContent)
+    });
+})
 
 eqal.addEventListener('click', () => {
   if (inputValue) {
@@ -89,8 +93,9 @@ eqal.addEventListener('click', () => {
       default:
         result = inputValue;
     }
-    inputNum.value = result;
-    inputValue = result.toString();
+    // inputNum.value = result;
+    equalResult.textContent=result.toString();
+    // inputValue = result.toString();
     previousNumber = '';
     operator = '';
   } else {
